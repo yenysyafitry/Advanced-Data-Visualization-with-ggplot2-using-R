@@ -20,11 +20,7 @@ summary(diamonds_c3)</p>
 <li>mutate()</li>
 <li>summarise()</li>
 <li>group_by()	</li></ol>
-<details>
-  <summary><b>Paket dplyr</br></b>
-</summary>
-<table border="0">TRUE</table>
-</details>
+<tr><td><b>Paket dplyr</b></td> <td><i>Output : TRUE</i></td></tr>
 <p align="justify"> <b>Transformasi Data</b></br>library(dplyr)</br>
 glimpse(storms)</br>
 # Tanpa menggunakan %>%</br>
