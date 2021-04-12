@@ -41,10 +41,10 @@ glimpse(storms_pipe)</br>
 # Komparasi metode tanpa pipe dan dengan pipe</br>
 identical(storms_nopipe, storms_pipe) </p>
 
-<p align="justify"> <b>Import Dataset</b></br><table>library(readr)</br>
+<p align="justify"> <b>Import Dataset</b><table>library(readr)</br>
 indodapoer <- read_tsv("https://dqlab-dataset.s3-ap-southeast-1.amazonaws.com/indodapoer.tsv.gz")</br>
 nrow(indodapoer)</br>
-ncol(indodapoer)</table> <details> > nrow(indodapoer)</details></p>
+ncol(indodapoer)</table> <Import Dataset> > nrow(indodapoer)</details></p>
 
 
 <p align="justify"> <b>Mengingat Kembali</b></br>
