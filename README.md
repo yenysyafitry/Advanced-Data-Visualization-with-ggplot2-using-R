@@ -26,4 +26,4 @@ summary(diamonds_c3)</p>
 <table border="0">TRUE</table>
 </details>
 <p align="justify"> <b>Mengingat Kembali</b></br>
-<p align="justify"> <b>Mengingat Kembali</b></br>
+<p align="justify"> <b></b></br>
