@@ -25,5 +25,29 @@ summary(diamonds_c3)</p>
 </summary>
 <table border="0">TRUE</table>
 </details>
+<p align="justify"> <b>Transformasi Data</b></br>library(dplyr)</br>
+glimpse(storms)</br>
+# Tanpa menggunakan %>%</br>
+storms1 <- select(storms, year, month, wind, pressure)</br>
+storms2 <- filter(storms1, between(year, 2000, 2015))</br>
+storms3 <- mutate(storms2, month = factor(month.name[storms2$month], levels = month.name))</br>
+storms4 <- group_by(storms3, month)</br>
+storms_nopipe <- summarise(storms4, avg_wind = mean(wind), avg_pressure = mean(pressure))</br>
+glimpse(storms_nopipe)</br>
+# Menggunakan %>%</br>
+storms_pipe <- storms %>% </br>
+select(year, month, wind, pressure) %>%</br>
+filter(between(year, 2000, 2015)) %>%</br>
+mutate(month = factor(month.name[month], levels = month.name)) %>%</br>
+group_by(month) %>%</br>
+summarise(avg_wind = mean(wind), avg_pressure = mean(pressure))</br>
+glimpse(storms_pipe)</br>
+# Komparasi metode tanpa pipe dan dengan pipe</br>
+identical(storms_nopipe, storms_pipe) </p>
+<p align="justify"> <b></b></br>
+<p align="justify"> <b>Mengingat Kembali</b></br>
+<p align="justify"> <b></b></br>
+<p align="justify"> <b>Mengingat Kembali</b></br>
+<p align="justify"> <b></b></br>
 <p align="justify"> <b>Mengingat Kembali</b></br>
 <p align="justify"> <b></b></br>
