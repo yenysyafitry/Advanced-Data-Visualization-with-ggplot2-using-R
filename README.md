@@ -41,16 +41,54 @@ glimpse(storms_pipe)</br>
 # Komparasi metode tanpa pipe dan dengan pipe</br>
 identical(storms_nopipe, storms_pipe) </p>
 
- <b>Import Dataset</b></br><details> <summary>> library(readr)</br>
-indodapoer <- read_tsv("https://dqlab-dataset.s3-ap-southeast-1.amazonaws.com/indodapoer.tsv.gz")</br>
-nrow(indodapoer)</summary><table><tr><td> > nrow(indodapoer)</br>
+ <b>Import Dataset</b><details> <summary>> library(readr)</br> 
+indodapoer <- read_tsv("https://storage.googleapis.com/dqlab-dataset/indodapoer.tsv.gz")</br> 
+nrow(indodapoer)</br> 
+ncol(indodapoer) </summary><table><tr><td> > nrow(indodapoer)</br>
 [1] 22468 </br> > ncol(indodapoer)</br> 
 [1] 222</td></tr></table></details>
 
 
-<p align="justify"> <b>Mengingat Kembali</b></br>
-<p align="justify"> <b></b></br>
-<p align="justify"> <b>Mengingat Kembali</b></br>
-<p align="justify"> <b></b></br>
-<p align="justify"> <b>Mengingat Kembali</b></br>
-<p align="justify"> <b></b></br>
+ <b>Wild Names and How to Tame Them</b><details> <summary>> install.packages("janitor", repos = "http://cran.us.r-project.org")</br>
+library(janitor)</br>
+head(colnames(indodapoer), 15)</br>
+indodapoer <- clean_names(indodapoer)</br>
+head(colnames(indodapoer), 15)</summary><table><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/Screenshot_1.jpg"></table></details>
+
+ <b>Import Dataset</b><details> <summary>> library(readr)</br> 
+indodapoer <- read_tsv("https://storage.googleapis.com/dqlab-dataset/indodapoer.tsv.gz")</br> 
+nrow(indodapoer)</br> 
+ncol(indodapoer) </summary><table><tr><td> > nrow(indodapoer)</br>
+[1] 22468 </br> > ncol(indodapoer)</br> 
+[1] 222</td></tr></table></details>
+
+ <b>Import Dataset</b><details> <summary>> library(readr)</br> 
+indodapoer <- read_tsv("https://storage.googleapis.com/dqlab-dataset/indodapoer.tsv.gz")</br> 
+nrow(indodapoer)</br> 
+ncol(indodapoer) </summary><table><tr><td> > nrow(indodapoer)</br>
+[1] 22468 </br> > ncol(indodapoer)</br> 
+[1] 222</td></tr></table></details>
+
+
+<b>Import Dataset</b><details> <summary>> library(readr)</br> 
+indodapoer <- read_tsv("https://storage.googleapis.com/dqlab-dataset/indodapoer.tsv.gz")</br> 
+nrow(indodapoer)</br> 
+ncol(indodapoer) </summary><table><tr><td> > nrow(indodapoer)</br>
+[1] 22468 </br> > ncol(indodapoer)</br> 
+[1] 222</td></tr></table></details>
+
+ <b>Import Dataset</b><details> <summary>> library(readr)</br> 
+indodapoer <- read_tsv("https://storage.googleapis.com/dqlab-dataset/indodapoer.tsv.gz")</br> 
+nrow(indodapoer)</br> 
+ncol(indodapoer) </summary><table><tr><td> > nrow(indodapoer)</br>
+[1] 22468 </br> > ncol(indodapoer)</br> 
+[1] 222</td></tr></table></details>
+
+ <b>Import Dataset</b><details> <summary>> library(readr)</br> 
+indodapoer <- read_tsv("https://storage.googleapis.com/dqlab-dataset/indodapoer.tsv.gz")</br> 
+nrow(indodapoer)</br> 
+ncol(indodapoer) </summary><table><tr><td> > nrow(indodapoer)</br>
+[1] 22468 </br> > ncol(indodapoer)</br> 
+[1] 222</td></tr></table></details>
+
+
