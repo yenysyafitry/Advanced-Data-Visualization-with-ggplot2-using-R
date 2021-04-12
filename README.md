@@ -44,7 +44,7 @@ identical(storms_nopipe, storms_pipe) </p>
 <p align="justify"> <b>Import Dataset</b></br><table>library(readr)</br>
 indodapoer <- read_tsv("https://dqlab-dataset.s3-ap-southeast-1.amazonaws.com/indodapoer.tsv.gz")</br>
 nrow(indodapoer)</br>
-ncol(indodapoer)</table> <details> > nrow(indodapoer)</details>
+ncol(indodapoer)</table> <details> > nrow(indodapoer)</details></p>
 
 
 <p align="justify"> <b>Mengingat Kembali</b></br>
