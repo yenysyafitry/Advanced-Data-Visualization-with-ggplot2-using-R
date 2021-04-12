@@ -55,19 +55,25 @@ head(colnames(indodapoer), 15)</br>
 indodapoer <- clean_names(indodapoer)</br>
 head(colnames(indodapoer), 15)</summary><table><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/Screenshot_1.jpg"></table></details>
 
- <b>Import Dataset</b><details> <summary>> library(readr)</br> 
-indodapoer <- read_tsv("https://storage.googleapis.com/dqlab-dataset/indodapoer.tsv.gz")</br> 
-nrow(indodapoer)</br> 
-ncol(indodapoer) </summary><table><tr><td> > nrow(indodapoer)</br>
+ <b>Produk Domestik Regional Bruto</b><details> <summary>>library(stringr)</br>
+library(dplyr)</br>
+pdrb_pjawa <- indodapoer %>%</br>
+filter(area_name %in% c("Banten, Prop.","DKI Jakarta, Prop.","Jawa Barat, Prop.","Jawa Tengah, Prop.","DI Yogyakarta, Prop.","Jawa timur, Prop.")) %>%
+transmute(provinsi = str_remove(area_name, ", Prop."), tahun = year, pdrb_nonmigas = total_gdp_excluding_oil_and_gas_in_idr_million_constant_price) %>%
+filter(!is.na(pdrb_nonmigas))</br>
+glimpse(pdrb_pjawa) </summary><table><tr><td> > nrow(indodapoer)</br>
 [1] 22468 </br> > ncol(indodapoer)</br> 
 [1] 222</td></tr></table></details>
 
  <b>Import Dataset</b><details> <summary>> library(readr)</br> 
 indodapoer <- read_tsv("https://storage.googleapis.com/dqlab-dataset/indodapoer.tsv.gz")</br> 
 nrow(indodapoer)</br> 
-ncol(indodapoer) </summary><table><tr><td> > nrow(indodapoer)</br>
-[1] 22468 </br> > ncol(indodapoer)</br> 
-[1] 222</td></tr></table></details>
+ncol(indodapoer) </summary><table><tr><td>> glimpse(pdrb_pjawa)</br>
+Rows: 135</br>
+Columns: 3</br>
+$ provinsi      <chr> "Banten", "Banten", "Banten", "Banten", "Banten", "Bant… </br>
+$ tahun         <dbl> 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2…</br>
+$ pdrb_nonmigas <dbl> 45690559, 47495383, 49449321, 51957458, 54880406, 58106…</td></tr></table></details>
 
 
 <b>Import Dataset</b><details> <summary>> library(readr)</br> 
