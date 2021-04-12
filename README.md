@@ -12,14 +12,14 @@ summary(diamonds_c2)</br>
 diamonds_c3 <- ggplot() + geom_point( data = diamonds,mapping = aes(x = carat, y = price, colour = clarity))</br>
 summary(diamonds_c3)</p>
 <p align="justify"> <b>Yin dan Yang</b></br>library(dplyr)	</p>
-<p align="justify"> <b>Paket dplyr</b></br>Terdapat beberapa fungsi utama dari paket dplyr untuk melakukan transformasi data, diantaranya:
+<b>Paket dplyr</b></br>Terdapat beberapa fungsi utama dari paket dplyr untuk melakukan transformasi data, diantaranya:
 <ol>
 <li>select()</li>
 <li>filter()</li>
 <li>arrange()</li>
 <li>mutate()</li>
 <li>summarise()</li>
-<li>group_by()	</li></ol></p>
+<li>group_by()	</li></ol>
 <details>
   <summary><b>Paket dplyr</br></b>
 </summary>
