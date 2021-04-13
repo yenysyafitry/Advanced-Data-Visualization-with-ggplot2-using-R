@@ -125,7 +125,7 @@ coord_cartesian(clip = "off") +</br>
 theme_ipsum(grid = "Y", ticks = TRUE)  </summary>
   <table><tr><td><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/download (5).png"> </td></tr></table></details>
 
- <p align="justify"><b>Seluas Apa</b></br>Indonesia merupakan negara kepulauan yang sangat luas, tentu Anda telah mengetahui akan hal tersebut. Namun bagaimanakah perbandingan luas provinsi-provinsi di Indonesia. Dalam data indodapoer, data luas wilayah tersedia dalam kolom total_area_in_km. Data termutakhir adalah pada tahun 2009. Dapatkah Anda mengekstrak data tersebut menjadi obyek R bernama luas_provinsi</p><details> <summary>>  </summary>
+ <details> <summary><b>Seluas Apa</b></br>Indonesia merupakan negara kepulauan yang sangat luas, tentu Anda telah mengetahui akan hal tersebut. Namun bagaimanakah perbandingan luas provinsi-provinsi di Indonesia. Dalam data indodapoer, data luas wilayah tersedia dalam kolom total_area_in_km. Data termutakhir adalah pada tahun 2009. Dapatkah Anda mengekstrak data tersebut menjadi obyek R bernama luas_provinsi</br>  </summary>
   <table><tr><td>library(dplyr)</br>
 library(stringr)</br>
 luas_provinsi <- indodapoer %>%</br>
