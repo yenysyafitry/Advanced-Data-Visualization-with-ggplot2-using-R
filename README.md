@@ -390,8 +390,4 @@ axis.text.y = element_blank(),</br>
 axis.ticks = element_blank())  </summary>
   <table><tr><td><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/download (11).png"> </td></tr></table></details> 
   
-   <b>Import Dataset</b><details> <summary>>  </summary>
-  <table><tr><td><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/download (4).png"> </td></tr></table></details> 
-  
-   <b>Import Dataset</b><details> <summary>>  </summary>
-  <table><tr><td><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/download (4).png"> </td></tr></table></details> 
+
