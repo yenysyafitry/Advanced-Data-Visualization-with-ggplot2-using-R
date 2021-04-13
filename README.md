@@ -23,14 +23,14 @@ summary(diamonds_c3)</p>
 <table>Paket dplyr</b></td> <td><i>TRUE</i></table>
 <p align="justify"> <b>Transformasi Data</b></br>library(dplyr)</br>
 glimpse(storms)</br>
-# Tanpa menggunakan %>%</br>
+#Tanpa menggunakan %>%</br>
 storms1 <- select(storms, year, month, wind, pressure)</br>
 storms2 <- filter(storms1, between(year, 2000, 2015))</br>
 storms3 <- mutate(storms2, month = factor(month.name[storms2$month], levels = month.name))</br>
 storms4 <- group_by(storms3, month)</br>
 storms_nopipe <- summarise(storms4, avg_wind = mean(wind), avg_pressure = mean(pressure))</br>
 glimpse(storms_nopipe)</br>
-# Menggunakan %>%</br>
+#Menggunakan %>%</br>
 storms_pipe <- storms %>% </br>
 select(year, month, wind, pressure) %>%</br>
 filter(between(year, 2000, 2015)) %>%</br>
@@ -38,10 +38,10 @@ mutate(month = factor(month.name[month], levels = month.name)) %>%</br>
 group_by(month) %>%</br>
 summarise(avg_wind = mean(wind), avg_pressure = mean(pressure))</br>
 glimpse(storms_pipe)</br>
-# Komparasi metode tanpa pipe dan dengan pipe</br>
+#Komparasi metode tanpa pipe dan dengan pipe</br>
 identical(storms_nopipe, storms_pipe) </p>
 
- <b>Import Dataset</b><details> <summary>> library(readr)</br> 
+<details> <b>Import Dataset</b> <summary> library(readr)</br> 
 indodapoer <- read_tsv("https://storage.googleapis.com/dqlab-dataset/indodapoer.tsv.gz")</br> 
 nrow(indodapoer)</br> 
 ncol(indodapoer) </summary><table><tr><td> > nrow(indodapoer)</br>
@@ -49,13 +49,13 @@ ncol(indodapoer) </summary><table><tr><td> > nrow(indodapoer)</br>
 [1] 222</td></tr></table></details>
 
 
- <b>Wild Names and How to Tame Them</b><details> <summary>> install.packages("janitor", repos = "http://cran.us.r-project.org")</br>
+ <b>Wild Names and How to Tame Them</b><details> <summary> install.packages("janitor", repos = "http://cran.us.r-project.org")</br>
 library(janitor)</br>
 head(colnames(indodapoer), 15)</br>
 indodapoer <- clean_names(indodapoer)</br>
 head(colnames(indodapoer), 15)</summary><table><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/Screenshot_1.jpg"></table></details>
 
- <b>Produk Domestik Regional Bruto</b><details> <summary>>library(stringr)</br>
+ <b>Produk Domestik Regional Bruto</b><details> <summary>library(stringr)</br>
 library(dplyr)</br>
 pdrb_pjawa <- indodapoer %>%</br>
 filter(area_name %in% c("Banten, Prop.","DKI Jakarta, Prop.","Jawa Barat, Prop.","Jawa Tengah, Prop.","DI Yogyakarta, Prop.","Jawa timur, Prop.")) %>%
@@ -71,7 +71,7 @@ mutate( provinsi = fct_reorder2(provinsi, tahun, pdrb_nonmigas)) %>% </br>
 ggplot(aes(tahun, pdrb_nonmigas, colour = provinsi)) + geom_line() </summary><table><tr><td><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/download (2).png"> </td></tr></table></details>
 
 
-<b>Direct Labeling</b><details> <summary>>library(ggplot2)</br>
+<b>Direct Labeling</b><details> <summary>library(ggplot2)</br>
 library(dplyr)</br>
 library(directlabels)</br>
 pdrb_pjawa %>%</br>
@@ -82,7 +82,7 @@ pdrb_pjawa %>%</br>
     method = "last.points",</br>
     position = position_nudge(x = 0.3) # agar teks tidak berhimpitan dengan garis) </summary><table><tr><td> <img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/download (2).png"></td></tr></table></details>
 
- <b>Finalisasi Grafik</b><details> <summary>> library(ggplot2)
+ <b>Finalisasi Grafik</b><details> <summary> library(ggplot2)
 library(dplyr)</br>
 library(directlabels)</br>
 library(hrbrthemes)</br>
