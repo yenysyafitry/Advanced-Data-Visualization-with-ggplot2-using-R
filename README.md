@@ -41,7 +41,7 @@ glimpse(storms_pipe)</br>
 #Komparasi metode tanpa pipe dan dengan pipe</br>
 identical(storms_nopipe, storms_pipe) </p>
 
-<details> <b>Import Dataset</b> <summary> library(readr)</br> 
+<details> <summary><b>Import Dataset</b> </br> library(readr)</br> 
 indodapoer <- read_tsv("https://storage.googleapis.com/dqlab-dataset/indodapoer.tsv.gz")</br> 
 nrow(indodapoer)</br> 
 ncol(indodapoer) </summary><table><tr><td> > nrow(indodapoer)</br>
@@ -49,13 +49,13 @@ ncol(indodapoer) </summary><table><tr><td> > nrow(indodapoer)</br>
 [1] 222</td></tr></table></details>
 
 
- <b>Wild Names and How to Tame Them</b><details> <summary> install.packages("janitor", repos = "http://cran.us.r-project.org")</br>
+ <details> <summary><b>Wild Names and How to Tame Them</b></br> install.packages("janitor", repos = "http://cran.us.r-project.org")</br>
 library(janitor)</br>
 head(colnames(indodapoer), 15)</br>
 indodapoer <- clean_names(indodapoer)</br>
 head(colnames(indodapoer), 15)</summary><table><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/Screenshot_1.jpg"></table></details>
 
- <b>Produk Domestik Regional Bruto</b><details> <summary>library(stringr)</br>
+ <details> <summary><b>Produk Domestik Regional Bruto</b></br>library(stringr)</br>
 library(dplyr)</br>
 pdrb_pjawa <- indodapoer %>%</br>
 filter(area_name %in% c("Banten, Prop.","DKI Jakarta, Prop.","Jawa Barat, Prop.","Jawa Tengah, Prop.","DI Yogyakarta, Prop.","Jawa timur, Prop.")) %>%
@@ -63,7 +63,7 @@ transmute(provinsi = str_remove(area_name, ", Prop."), tahun = year, pdrb_nonmig
 filter(!is.na(pdrb_nonmigas))</br>
 glimpse(pdrb_pjawa) </summary><table><tr><td> <img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/Screenshot_2.jpg"></td></tr></table></details>
 
- <b>Grafik PDRB Non-Migas</b><details> <summary> library(dplyr)</br>
+<details> <summary>  <b>Grafik PDRB Non-Migas</b></br>library(dplyr)</br>
 library(ggplot2)</br>
 library(forcats)</br>
 pdrb_pjawa %>% </br>
@@ -71,7 +71,7 @@ mutate( provinsi = fct_reorder2(provinsi, tahun, pdrb_nonmigas)) %>% </br>
 ggplot(aes(tahun, pdrb_nonmigas, colour = provinsi)) + geom_line() </summary><table><tr><td><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/download (2).png"> </td></tr></table></details>
 
 
-<b>Direct Labeling</b><details> <summary>library(ggplot2)</br>
+<details> <summary><b>Direct Labeling</b></br>library(ggplot2)</br>
 library(dplyr)</br>
 library(directlabels)</br>
 pdrb_pjawa %>%</br>
@@ -82,7 +82,7 @@ pdrb_pjawa %>%</br>
     method = "last.points",</br>
     position = position_nudge(x = 0.3) # agar teks tidak berhimpitan dengan garis) </summary><table><tr><td> <img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/download (2).png"></td></tr></table></details>
 
- <b>Finalisasi Grafik</b><details> <summary> library(ggplot2)
+<details> <summary>  <b>Finalisasi Grafik</b></br>library(ggplot2)</br>
 library(dplyr)</br>
 library(directlabels)</br>
 library(hrbrthemes)</br>
@@ -103,7 +103,7 @@ caption = "Data: INDO-DAPOER, The World Bank"</br> ) +
 coord_cartesian(clip = "off") +</br>
 theme_ipsum(grid = "Y", ticks = TRUE)</summary><table><tr><td> <img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/download (4).png"></td></tr></table></details>
 
- <b>Finalisasi Grafik</b><details> <summary>library(ggplot2)</br>
+ <details> <summary><b>Finalisasi Grafik</b></br>library(ggplot2)</br>
 library(dplyr)</br>
 library(directlabels)</br>
 library(hrbrthemes)</br>
@@ -137,7 +137,7 @@ luas_wilayah=total_area_in_km</br>
 )</br>
 glimpse(luas_provinsi) </td></tr></table></details>
   
- <b>Komparasi Luas Wilayah</b><details> <summary> </summary>
+ <details> <summary> <b>Komparasi Luas Wilayah</b></summary>
   <table><tr><td>library(treemapify)</br>
 library(ggplot2)</br>
 library(dplyr)</br>
@@ -183,7 +183,7 @@ luas_provinsi %>% </br>
 theme_ipsum() +</br>
   theme(legend.position = "bottom")  </p>
   
-  <b>Perjalanan Ini</b><details> <summary>library(dplyr)</br>
+  <details> <summary><b>Perjalanan Ini</b></br>library(dplyr)</br>
 library(stringr)</br>
 jalan_kabkota <-</br>
 indodapoer %>%</br>
@@ -198,7 +198,7 @@ jalan_sangat_baik = length_of_district_road_good_in_km_bina_marga_data)</br>
 glimpse(jalan_kabkota)  </summary>
   <table><tr><td><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/Screenshot_3.jpg"> </td></tr></table></details>
 
- <b>Pivot</b><details> <summary>library(tidyr)</br>
+<details> <summary> <b>Pivot</b></br>library(tidyr)
 library(dplyr)</br>
 glimpse(jalan_kabkota)</br>
 jalan_kabkota <-</br>
@@ -211,7 +211,7 @@ values_to = "panjang_jalan")</br>
 glimpse(jalan_kabkota)  </summary>
   <table><tr><td><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/Screenshot_4.jpg"> </td></tr></table></details>
   
- <b>The Next Step</b><details> <summary>library(dplyr)</br>
+<details> <summary> <b>The Next Step</b></br>library(dplyr)</br>
 library(stringr)</br>
 jalan_kabkota <-</br>
 jalan_kabkota %>%</br>
@@ -228,7 +228,7 @@ labels = c("Rusak parah", "Rusak ringan", "Cukup baik", "Sangat baik")))</br>
 glimpse(jalan_kabkota)  </summary>
   <table><tr><td><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/Screenshot_5.jpg"> </td></tr></table></details>
 
- <b>Grafik Kondisi Jalan</b><details> <summary>install.packages("ggridges",repos = "http://cran.us.r-project.org")</br>
+<details> <summary> <b>Grafik Kondisi Jalan</b></br>install.packages("ggridges",repos = "http://cran.us.r-project.org")</br>
 library(ggplot2)</br>
 library(dplyr)</br>
 library(ggridges)</br>
@@ -242,7 +242,7 @@ jalan_kabkota_plot <- </br>
 jalan_kabkota_plot  </summary>
   <table><tr><td><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/download (6).png"> </td></tr></table></details> 
   
-<b>Transformasi Logaritmik</b><details> <summary>install.packages("ggridges",repos = "http://cran.us.r-project.org")</br>
+<details> <summary><b>Transformasi Logaritmik</b></br>install.packages("ggridges",repos = "http://cran.us.r-project.org")
 library(ggplot2)</br>
 library(dplyr)</br>
 library(ggridges)</br>
@@ -258,7 +258,7 @@ geom_vline(xintercept = 100, linetype = "dashed", colour = "darkslategray4") +</
 scale_x_continuous(trans = "log10")  </summary>
   <table><tr><td><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/download (7).png"> </td></tr></table></details>
 
- <b>Finalisasi</b><details> <summary>install.packages("ggridges",repos = "http://cran.us.r-project.org")</br>
+<details> <summary> <b>Finalisasi</b></br>install.packages("ggridges",repos = "http://cran.us.r-project.org")</br>
 library(ggplot2)</br>
 library(dplyr)</br>
 library(ggridges)</br>
@@ -283,7 +283,7 @@ caption = "Data: INDO-DAPOER, The World Bank") +</br>
   theme_ipsum(grid = FALSE, ticks = TRUE)  </summary>
   <table><tr><td><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/download (8).png"> </td></tr></table></details> 
   
-   <b>Fasilitas Kesehatan di Kalimantan</b><details> <summary>library(dplyr)</br>
+   <details> <summary><b>Fasilitas Kesehatan di Kalimantan</b></br>library(dplyr)</br>
 library(ggplot2)</br>
 library(tidyr)</br>
 library(stringr)</br>
@@ -308,7 +308,7 @@ jumlah = ceiling(jumlah / 10))</br>
 glimpse(faskes_kalimantan)  </summary>
   <table><tr><td><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/Screenshot_6.jpg"> </td></tr></table></details> 
   
-<b>Waffle Charts</b><details> <summary>install.packages("waffle", repos = "https://cinc.rud.is")</br>
+<details> <summary><b>Waffle Charts</b></br>install.packages("waffle", repos = "https://cinc.rud.is")</br>
 library(waffle)</br>
 library(ggplot2)</br>
 library(dplyr)</br>
@@ -318,7 +318,7 @@ faskes_kalimantan_plot <- faskes_kalimantan %>% </br>
 faskes_kalimantan_plot  </summary>
   <table><tr><td><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/download (9).png"> </td></tr></table></details>
 
- <b>Mengatur Warna dan Label</b><details> <summary>install.packages("waffle", repos = "https://cinc.rud.is")</br>
+<details> <summary> <b>Mengatur Warna dan Label</b></br>install.packages("waffle", repos = "https://cinc.rud.is")</br>
 library(waffle)</br>
 library(ggplot2)</br>
 library(dplyr)</br>
@@ -347,7 +347,7 @@ faskes_kalimantan_plot  </summary>
   <table><tr><td><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/download (10).png"> </td></tr></table></details> 
 
 
- <b>Finalisasi Waffle Charts</b><details> <summary>install.packages("waffle", repos = "https://cinc.rud.is")</br>
+<details> <summary> <b>Finalisasi Waffle Charts</b></br>install.packages("waffle", repos = "https://cinc.rud.is")</br>
 library(waffle)</br>
 library(ggplot2)</br>
 library(dplyr)</br>
