@@ -48,7 +48,11 @@ library(dplyr)
 <li>mutate()</li>
 <li>summarise()</li>
 <li>group_by()	</li></ol>
-<table><tr><td>Paket dplyr</td> <td>TRUE</td></tr></table>
+
+```plantuml
+Paket dplyr
+TRUE
+```
 
 <p align="justify"> <b>Transformasi Data</b></br>library(dplyr)</br>
 glimpse(storms)</br>
