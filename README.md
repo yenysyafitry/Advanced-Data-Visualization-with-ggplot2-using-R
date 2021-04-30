@@ -87,103 +87,140 @@ nrow(indodapoer)
 ncol(indodapoer) 
 ```
 
-<p align="justify"> <b>Output :</b> </p> 
+<p align="justify"> <i>Output :</i> </p> 
 
 ```plantuml
- >nrow(indodapoer)
-  [1] 22468 
- >ncol(indodapoer)
-  [1] 222
+> nrow(indodapoer)
+   [1] 22468 
+> ncol(indodapoer)
+   [1] 222
 ```
 
- <details> <summary><b>Wild Names and How to Tame Them</b></br> install.packages("janitor", repos = "http://cran.us.r-project.org")</br>
-library(janitor)</br>
-head(colnames(indodapoer), 15)</br>
-indodapoer <- clean_names(indodapoer)</br>
-head(colnames(indodapoer), 15)</summary><table><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/Screenshot_1.jpg"></table></details>
+<p align="justify"><b>Wild Names and How to Tame Them</b></p>
+ 
+ ```plantuml
+install.packages("janitor", repos = "http://cran.us.r-project.org")
+library(janitor)
+head(colnames(indodapoer), 15)
+indodapoer <- clean_names(indodapoer)
+head(colnames(indodapoer), 15)
+ ```
 
- <details> <summary><b>Produk Domestik Regional Bruto</b></br>library(stringr)</br>
-library(dplyr)</br>
-pdrb_pjawa <- indodapoer %>%</br>
+<p align="justify"> <i>Output :</i> </p> 
+
+<p align="justify"><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/Screenshot_1.jpg"></p>
+
+<p align="justify"><b>Produk Domestik Regional Bruto</b></p>
+
+ ```plantuml
+library(stringr)
+library(dplyr)
+pdrb_pjawa <- indodapoer %>%
 filter(area_name %in% c("Banten, Prop.","DKI Jakarta, Prop.","Jawa Barat, Prop.","Jawa Tengah, Prop.","DI Yogyakarta, Prop.","Jawa timur, Prop.")) %>%
 transmute(provinsi = str_remove(area_name, ", Prop."), tahun = year, pdrb_nonmigas = total_gdp_excluding_oil_and_gas_in_idr_million_constant_price) %>%
-filter(!is.na(pdrb_nonmigas))</br>
-glimpse(pdrb_pjawa) </summary><table><tr><td> <img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/Screenshot_2.jpg"></td></tr></table></details>
+filter(!is.na(pdrb_nonmigas))
+glimpse(pdrb_pjawa) 
+ ```
 
-<details> <summary>  <b>Grafik PDRB Non-Migas</b></br>library(dplyr)</br>
-library(ggplot2)</br>
-library(forcats)</br>
-pdrb_pjawa %>% </br>
-mutate( provinsi = fct_reorder2(provinsi, tahun, pdrb_nonmigas)) %>% </br>
-ggplot(aes(tahun, pdrb_nonmigas, colour = provinsi)) + geom_line() </summary><table><tr><td><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/download (2).png"> </td></tr></table></details>
+<p align="justify"><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/Screenshot_2.jpg"></p>
+
+<p align="justify"><b>Grafik PDRB Non-Migas</b></p>
+
+ ```plantuml
+library(dplyr)
+library(ggplot2)
+library(forcats)
+pdrb_pjawa %>% 
+mutate( provinsi = fct_reorder2(provinsi, tahun, pdrb_nonmigas)) %>% 
+ggplot(aes(tahun, pdrb_nonmigas, colour = provinsi)) + geom_line() 
+ ```
+
+<p align="justify"><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/download (2).png"> </p>
 
 
-<details> <summary><b>Direct Labeling</b></br>library(ggplot2)</br>
-library(dplyr)</br>
-library(directlabels)</br>
-pdrb_pjawa %>%</br>
-  ggplot(aes(tahun, pdrb_nonmigas)) +</br>
-  geom_line(aes(colour = provinsi), show.legend = FALSE) +</br>
-  geom_dl(</br>
-    aes(label = provinsi),</br>
-    method = "last.points",</br>
-    position = position_nudge(x = 0.3) # agar teks tidak berhimpitan dengan garis) </summary><table><tr><td> <img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/download (2).png"></td></tr></table></details>
+<p align="justify"><b>Direct Labeling</b></br>library(ggplot2)</p>
 
-<details> <summary>  <b>Finalisasi Grafik</b></br>library(ggplot2)</br>
-library(dplyr)</br>
-library(directlabels)</br>
-library(hrbrthemes)</br>
-pdrb_pjawa %>%</br>
-ggplot(aes(tahun, pdrb_nonmigas / 1e6)) +</br>
-geom_line(aes(colour = provinsi), show.legend = FALSE) +</br>
-geom_dl(</br>
-aes(label = provinsi),</br>
-method = "last.points",</br>
+ ```plantuml
+library(dplyr)
+library(directlabels)
+pdrb_pjawa %>%
+ ggplot(aes(tahun, pdrb_nonmigas)) + geom_line(aes(colour = provinsi), show.legend = FALSE) +
+  geom_dl( aes(label = provinsi),
+   method = "last.points",
+    position = position_nudge(x = 0.3) 
+     #agar teks tidak berhimpitan dengan garis) 
+    
+<p align="justify"><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/download (2).png"></p>
+
+<p align="justify"> <b>Finalisasi Grafik</b></br>library(ggplot2)</p>
+
+ ```plantuml
+library(dplyr)
+library(directlabels)
+library(hrbrthemes)
+pdrb_pjawa %>%
+ggplot(aes(tahun, pdrb_nonmigas / 1e6)) +
+geom_line(aes(colour = provinsi), show.legend = FALSE) +
+geom_dl(
+aes(label = provinsi),
+method = "last.points",
 position = position_nudge(x = 0.3) # agar teks tidak berhimpitan dengan garis
-) +</br>
-labs(</br>
-x = NULL,</br>
-y = NULL,</br>
-title = "PDRB Non-Migas di Pulau Jawa Hingga Tahun 2011",</br>
-subtitle = "PDRB atas dasar harga konstan, dalam satuan triliun",</br>
-caption = "Data: INDO-DAPOER, The World Bank"</br> ) +
-coord_cartesian(clip = "off") +</br>
-theme_ipsum(grid = "Y", ticks = TRUE)</summary><table><tr><td> <img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/download (4).png"></td></tr></table></details>
+) +
+labs(
+x = NULL,
+y = NULL,
+title = "PDRB Non-Migas di Pulau Jawa Hingga Tahun 2011",
+subtitle = "PDRB atas dasar harga konstan, dalam satuan triliun",
+caption = "Data: INDO-DAPOER, The World Bank" ) +
+coord_cartesian(clip = "off") +
+theme_ipsum(grid = "Y", ticks = TRUE)
+ ```
 
- <details> <summary><b>Finalisasi Grafik</b></br>library(ggplot2)</br>
-library(dplyr)</br>
-library(directlabels)</br>
-library(hrbrthemes)</br>
-pdrb_pjawa %>%</br>
-ggplot(aes(tahun, pdrb_nonmigas / 1e6)) +</br>
-geom_line(aes(colour = provinsi), show.legend = FALSE) +</br>
-geom_dl(</br>
-aes(label = provinsi),</br>
-method = "last.points",</br>
-position = position_nudge(x = 0.3) # agar teks tidak berhimpitan dengan garis</br>
-) +</br>
-labs(</br>
-x = NULL,</br>
-y = NULL,</br>
-title = "PDRB Non-Migas di Pulau Jawa Hingga Tahun 2011",</br>
-subtitle = "PDRB atas dasar harga konstan, dalam satuan triliun",</br>
-caption = "Data: INDO-DAPOER, The World Bank") +</br>
-coord_cartesian(clip = "off") +</br>
-theme_ipsum(grid = "Y", ticks = TRUE)  </summary>
-  <table><tr><td><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/download (5).png"> </td></tr></table></details>
+<p align="justify"><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/download (4).png"></p>
 
- <details> <summary><b>Seluas Apa</b></br>Indonesia merupakan negara kepulauan yang sangat luas, tentu Anda telah mengetahui akan hal tersebut. Namun bagaimanakah perbandingan luas provinsi-provinsi di Indonesia. Dalam data indodapoer, data luas wilayah tersedia dalam kolom total_area_in_km. Data termutakhir adalah pada tahun 2009. Dapatkah Anda mengekstrak data tersebut menjadi obyek R bernama luas_provinsi</br>  </summary>
-  <table><tr><td>library(dplyr)</br>
-library(stringr)</br>
-luas_provinsi <- indodapoer %>%</br>
-filter(str_detect(area_name,"Prop")) %>%</br>
-filter(year==2009) %>%</br>
-transmute(</br>
-provinsi=str_remove(area_name,", Prop."),</br>
-luas_wilayah=total_area_in_km</br>
-)</br>
-glimpse(luas_provinsi) </td></tr></table></details>
-  
+<p align="justify"><b>Finalisasi Grafik</b></p>
+
+ ```plantuml
+library(ggplot2)
+library(dplyr)
+library(directlabels)
+library(hrbrthemes)
+pdrb_pjawa %>%
+ggplot(aes(tahun, pdrb_nonmigas / 1e6)) +
+geom_line(aes(colour = provinsi), show.legend = FALSE) +
+geom_dl(
+aes(label = provinsi),
+method = "last.points",
+position = position_nudge(x = 0.3) # agar teks tidak berhimpitan dengan garis
+) +
+labs(
+x = NULL,
+y = NULL,
+title = "PDRB Non-Migas di Pulau Jawa Hingga Tahun 2011",
+subtitle = "PDRB atas dasar harga konstan, dalam satuan triliun",
+caption = "Data: INDO-DAPOER, The World Bank") +
+coord_cartesian(clip = "off") +
+theme_ipsum(grid = "Y", ticks = TRUE)  
+ ```
+
+<p align="justify"><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/download (5).png"> </p>
+
+<p align="justify"><b>Seluas Apa</b></br>Indonesia merupakan negara kepulauan yang sangat luas, tentu Anda telah mengetahui akan hal tersebut. Namun bagaimanakah perbandingan luas provinsi-provinsi di Indonesia. Dalam data indodapoer, data luas wilayah tersedia dalam kolom total_area_in_km. Data termutakhir adalah pada tahun 2009. Dapatkah Anda mengekstrak data tersebut menjadi obyek R bernama luas_provinsi</p> 
+
+
+ ```plantuml
+ library(dplyr)
+library(stringr)
+luas_provinsi <- indodapoer %>%
+filter(str_detect(area_name,"Prop")) %>%
+filter(year==2009) %>%
+transmute(
+provinsi=str_remove(area_name,", Prop."),
+luas_wilayah=total_area_in_km
+)
+glimpse(luas_provinsi)
+   ```
+   
  <details> <summary> <b>Komparasi Luas Wilayah</b></summary>
   <table><tr><td>library(treemapify)</br>
 library(ggplot2)</br>
