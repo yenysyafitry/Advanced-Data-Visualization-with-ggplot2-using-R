@@ -89,11 +89,10 @@ ncol(indodapoer)
 
 <p align="justify"> <b>Output :</b> </p> 
 
-
 ```plantuml
-> nrow(indodapoer)
+ >nrow(indodapoer)
   [1] 22468 
-> ncol(indodapoer)
+ >ncol(indodapoer)
   [1] 222
 ```
 
