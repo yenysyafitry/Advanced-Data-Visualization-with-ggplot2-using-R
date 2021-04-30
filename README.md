@@ -14,16 +14,33 @@ qplot(x = carat, y = price, colour = clarity, data = diamonds)
 ```
 
 <p align="justify"><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/download.png"></p>
-<p align="justify"> <b>Pembuatan Grafik dengan ggplot</b></br>library(ggplot2) </br> ggplot(data = diamonds, mapping = aes(x = carat, y = price, colour = clarity)) +
-  geom_point()</br><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/download (1).png"></p>
-<p align="justify"> <b>Kode 3 Rupa</b></br>library(ggplot2)diamonds_c1 <- ggplot( data = diamonds, mapping = aes(x = carat, y = price, colour = clarity)) + geom_point()
+<p align="justify"> <b>Pembuatan Grafik dengan ggplot</b></p>
+
+```plantuml
+library(ggplot2)
+ggplot(data = diamonds, mapping = aes(x = carat, y = price, colour = clarity)) +
+geom_point()
+```
+
+ <p align="justify"> <img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/download (1).png"></p>
+<p align="justify"> <b>Kode 3 Rupa</b></p>
+
+```plantuml
+library(ggplot2)diamonds_c1 <- ggplot( data = diamonds, mapping = aes(x = carat, y = price, colour = clarity)) + geom_point()
 summary(diamonds_c1)</br>
 diamonds_c2 <- ggplot(data = diamonds) + geom_point(mapping = aes(x = carat, y = price, colour = clarity))</br>
 summary(diamonds_c2)</br>
 diamonds_c3 <- ggplot() + geom_point( data = diamonds,mapping = aes(x = carat, y = price, colour = clarity))</br>
-summary(diamonds_c3)</p>
-<p align="justify"> <b>Yin dan Yang</b></br>library(dplyr)	</p>
-<b>Paket dplyr</b></br>Terdapat beberapa fungsi utama dari paket dplyr untuk melakukan transformasi data, diantaranya:
+summary(diamonds_c3)
+```
+
+<p align="justify"> <b>Yin dan Yang</b></p>
+
+```plantuml
+library(dplyr)	
+```
+
+<p align="justify"><b>Paket dplyr</b></br>Terdapat beberapa fungsi utama dari paket dplyr untuk melakukan transformasi data, diantaranya:</p>
 <ol>
 <li>select()</li>
 <li>filter()</li>
@@ -31,7 +48,8 @@ summary(diamonds_c3)</p>
 <li>mutate()</li>
 <li>summarise()</li>
 <li>group_by()	</li></ol>
-<table>Paket dplyr</b></td> <td><i>TRUE</i></table>
+<table><tr><td>Paket dplyr</td> <td>TRUE</td></tr></table>
+
 <p align="justify"> <b>Transformasi Data</b></br>library(dplyr)</br>
 glimpse(storms)</br>
 #Tanpa menggunakan %>%</br>
