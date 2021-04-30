@@ -54,32 +54,43 @@ Paket dplyr
 TRUE
 ```
 
-<p align="justify"> <b>Transformasi Data</b></br>library(dplyr)</br>
-glimpse(storms)</br>
-#Tanpa menggunakan %>%</br>
-storms1 <- select(storms, year, month, wind, pressure)</br>
-storms2 <- filter(storms1, between(year, 2000, 2015))</br>
-storms3 <- mutate(storms2, month = factor(month.name[storms2$month], levels = month.name))</br>
-storms4 <- group_by(storms3, month)</br>
-storms_nopipe <- summarise(storms4, avg_wind = mean(wind), avg_pressure = mean(pressure))</br>
-glimpse(storms_nopipe)</br>
-#Menggunakan %>%</br>
-storms_pipe <- storms %>% </br>
-select(year, month, wind, pressure) %>%</br>
-filter(between(year, 2000, 2015)) %>%</br>
-mutate(month = factor(month.name[month], levels = month.name)) %>%</br>
-group_by(month) %>%</br>
-summarise(avg_wind = mean(wind), avg_pressure = mean(pressure))</br>
-glimpse(storms_pipe)</br>
-#Komparasi metode tanpa pipe dan dengan pipe</br>
-identical(storms_nopipe, storms_pipe) </p>
+<p align="justify"> <b>Transformasi Data</b></p>
 
-<details> <summary><b>Import Dataset</b> </br> library(readr)</br> 
-indodapoer <- read_tsv("https://storage.googleapis.com/dqlab-dataset/indodapoer.tsv.gz")</br> 
-nrow(indodapoer)</br> 
-ncol(indodapoer) </summary><table><tr><td> > nrow(indodapoer)</br>
+```plantuml
+library(dplyr)
+glimpse(storms)
+#Tanpa menggunakan %>%
+storms1 <- select(storms, year, month, wind, pressure)
+storms2 <- filter(storms1, between(year, 2000, 2015))
+storms3 <- mutate(storms2, month = factor(month.name[storms2$month], levels = month.name))
+storms4 <- group_by(storms3, month)
+storms_nopipe <- summarise(storms4, avg_wind = mean(wind), avg_pressure = mean(pressure))
+glimpse(storms_nopipe)
+#Menggunakan %>%
+storms_pipe <- storms %>% 
+select(year, month, wind, pressure) %>%
+filter(between(year, 2000, 2015)) %>%
+mutate(month = factor(month.name[month], levels = month.name)) %>%
+group_by(month) %>%
+summarise(avg_wind = mean(wind), avg_pressure = mean(pressure))
+glimpse(storms_pipe)
+#Komparasi metode tanpa pipe dan dengan pipe
+identical(storms_nopipe, storms_pipe)
+```
+
+<p align="justify"> <b>Import Dataset</b> </p> 
+
+```plantuml
+library(readr)
+indodapoer <- read_tsv("https://storage.googleapis.com/dqlab-dataset/indodapoer.tsv.gz")
+nrow(indodapoer)
+ncol(indodapoer) 
+```
+
+
+<table><tr><td> > nrow(indodapoer)</br>
 [1] 22468 </br> > ncol(indodapoer)</br> 
-[1] 222</td></tr></table></details>
+[1] 222</td></tr></table>
 
 
  <details> <summary><b>Wild Names and How to Tame Them</b></br> install.packages("janitor", repos = "http://cran.us.r-project.org")</br>
