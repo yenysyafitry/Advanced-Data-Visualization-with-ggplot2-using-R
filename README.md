@@ -391,3 +391,5 @@ axis.ticks = element_blank())  </summary>
   <table><tr><td><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/download (11).png"> </td></tr></table></details> 
   
 
+</br></br></br>
+<p align="center"><b>E-Sertifikat </b></br><img src="https://github.com/yenysyafitry/Advanced-Data-Visualization-with-ggplot2-using-R/blob/main/e-sertifikat.jpg"></p>
