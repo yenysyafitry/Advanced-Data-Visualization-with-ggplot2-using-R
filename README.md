@@ -87,11 +87,15 @@ nrow(indodapoer)
 ncol(indodapoer) 
 ```
 
+<p align="justify"> <b>Output :</b> </p> 
 
-<table><tr><td> > nrow(indodapoer)</br>
-[1] 22468 </br> > ncol(indodapoer)</br> 
-[1] 222</td></tr></table>
 
+```plantuml
+> nrow(indodapoer)
+  [1] 22468 
+> ncol(indodapoer)
+  [1] 222
+```
 
  <details> <summary><b>Wild Names and How to Tame Them</b></br> install.packages("janitor", repos = "http://cran.us.r-project.org")</br>
 library(janitor)</br>
